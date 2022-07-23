@@ -15,7 +15,7 @@ const AddProduct = () => {
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label px-3">Price</label>
-                    <input type="number" class="form-control" id="price" placeholder="Thumbnail" required/>
+                    <input type="number" class="form-control" id="price" placeholder="Price" required/>
                 </div>
                 <div class="mb-3">
                     <label for="desc" class="form-label px-3">Description</label>

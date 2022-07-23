@@ -1,0 +1,28 @@
+.footer{
+    /* background-color: #ededed; */
+    background-color: #202c43;
+    padding: 40px 0px 60px 0;
+    border-top: 1px solid #ccc;
+    color: #fff;
+}
+.footer-header{
+    display: inline;
+    padding-bottom: 8px;
+    font-weight: 700;
+    border-bottom: 1px solid #fff;
+}
+.footer-list{
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+.footer-item{
+    font-size: 14px;
+}
+.footer-icon{
+    font-size: 30px;
+    margin-top: 10px;
+    padding-right: 180px;
+    display: flex;
+    justify-content: space-between;
+}

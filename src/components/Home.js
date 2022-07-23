@@ -99,6 +99,27 @@ const Home = () => {
                             }
                         </div>
                     </div>
+                    <div className="product-bestseller mt-5">
+                        <div className="row row-cols-5">
+                            <h4 className="text-center col-md-12 mb-4" style={{color: '#fedf5a'}}>GIẢM GIÁ NHIỀU</h4>
+                            {
+                                prod_selling.map((item, idx) => (
+                                    <div className="col mb-3"key={idx} prod_id={item.id}>
+                                        <div className="product-item">
+                                            <span className="product-tag">Yêu thích</span>
+                                            <img src={item.img} alt="" className="product-img"></img>
+                                            <div className="product-name">{item.name}</div>
+                                            <div className="product-qtt">Còn {item.qtt} sản phẩm</div>
+                                            <div className="row">
+                                                <div className="product-old-price col-md-5">{item.old_price} đ</div>
+                                                <div className="product-new-price col-md-7">{item.new_price} đ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
                 </div>
 
 
