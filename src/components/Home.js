@@ -1,5 +1,6 @@
 import React from "react";
 import HomeSidebar from './HomeSidebar'
+import { Link } from "react-router-dom";
 import '../assets/user/css/Home.css'
 const Home = () => {
     const prod_selling = [
@@ -83,7 +84,7 @@ const Home = () => {
                             <h4 className="text-center col-md-12 mb-4" style={{color: '#fedf5a'}}>SẢN PHẨM BÁN CHẠY</h4>
                             {
                                 prod_selling.map((item, idx) => (
-                                    <div className="col mb-3"key={idx} prod_id={item.id}>
+                                    <Link to = {`/${item.id}`}className="col mb-3"key={idx} prod_id={item.id}>
                                         <div className="product-item">
                                             <span className="product-tag">Yêu thích</span>
                                             <img src={item.img} alt="" className="product-img"></img>
@@ -94,7 +95,7 @@ const Home = () => {
                                                 <div className="product-new-price col-md-7">{item.new_price} đ</div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 ))
                             }
                         </div>
@@ -104,7 +105,7 @@ const Home = () => {
                             <h4 className="text-center col-md-12 mb-4" style={{color: '#fedf5a'}}>GIẢM GIÁ NHIỀU</h4>
                             {
                                 prod_selling.map((item, idx) => (
-                                    <div className="col mb-3"key={idx} prod_id={item.id}>
+                                    <Link to={`/${item.prod_id}`} className="col mb-3"key={idx} prod_id={item.id}>
                                         <div className="product-item">
                                             <span className="product-tag">Yêu thích</span>
                                             <img src={item.img} alt="" className="product-img"></img>
@@ -115,7 +116,7 @@ const Home = () => {
                                                 <div className="product-new-price col-md-7">{item.new_price} đ</div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 ))
                             }
                         </div>
