@@ -6,6 +6,7 @@ import Home from "../../components/Home"
 import Footer from "./Footer"
 import ProductDetail from "../../components/ProductDetail";
 import Login from "../../components/Login";
+import Order from "../../components/Order";
 const UserLayout = () => {
     return(
         <div className="userlayout">
@@ -15,6 +16,7 @@ const UserLayout = () => {
                     <Route path='/*' exact  element={<Home/>} />
                     <Route path='products/:productId' exact element={<ProductDetail/>} />
                     <Route path='/login' element={<Login />} />
+                    <Route path='/order' element = {<Order />} />
                 </Routes>
             </div>
             <Footer />

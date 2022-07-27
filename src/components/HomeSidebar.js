@@ -39,7 +39,7 @@ const Sidebar = () => {
                     ))
                 }
             </ul>
-            <div className="sidebar-header">Bộ lọc tìm kiếm</div>
+            {/* <div className="sidebar-header">Bộ lọc tìm kiếm</div> */}
         </div>
     )
 }

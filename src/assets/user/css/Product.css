@@ -98,6 +98,9 @@
     cursor: pointer;
 }
 .buy-btn{
+    display: block;
+    text-decoration: none;
+    text-align: center;
     width: 100%;
     padding: 10px 0;
     margin-top: 20px;
@@ -106,7 +109,10 @@
     background-color: #ed1b24;
     color: #fff;
     font-weight: 600;
-
+}
+.buy-btn:hover{
+    color: #fff;
+    opacity: 0.9;
 }
 .pd-commit{
     border: 1px solid #ddd;

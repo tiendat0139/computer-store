@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import '../assets/user/css/Product.css'
 import { useParams } from "react-router-dom";
@@ -8,6 +9,7 @@ const ProductDetail = () => {
     const [product, setProduct] = useState([]);
     const [selected, setSelected] = useState('');
     const [loading, setLoading] = useState(true);
+    const [orderQtt, setOrderQtt] = useState('');
 
     useEffect(() => {
         axios.get(`/products/${productId}`).then(res => {
@@ -22,6 +24,7 @@ const ProductDetail = () => {
     if(loading){
         return <div>Loading...</div>
     }
+
     return(
         <div className="pd-wrapper">
             <div className="pd-detail container px-3">
@@ -69,16 +72,16 @@ const ProductDetail = () => {
                         <div className="pd-buy">
                             <div className="pd-buy_number">
                                 <span className="pd-buy_span" >Số lượng:</span>
-                                <input type="number" className="pd-buy_box"></input>
+                                <input type="number" className="pd-buy_box" value={orderQtt} onChange={e => setOrderQtt(e.target.value)}></input>
                             </div>
                             <div className="pd-buy_card">
                                 <i className="fa-solid fa-cart-arrow-down"></i>
                                 Thêm vào giỏ hàng
                             </div>
-                            <button className="buy-btn">
+                            <Link to={`/order?id=${productId}&qtt=${orderQtt}`} className="buy-btn">
                                 ĐẶT MUA NGAY <br></br>
                                 <small>Giao hàng tận nơi nhanh chóng</small>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                     <div className="col-md-3">

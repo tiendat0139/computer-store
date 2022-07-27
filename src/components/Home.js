@@ -1,13 +1,32 @@
-import React from "react";
-import {Routes, Route} from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import {Routes, Route, useLocation} from 'react-router-dom';
 import HomeSidebar from './HomeSidebar'
 import '../assets/user/css/Home.css'
 import HomeProduct from "./HomeProduct";
 import CategoryProduct from "./CategoryProduct";
 
 const Home = () => {
+    const {state} = useLocation()
+    const [message, setMessage] = useState('')
+    useEffect(() => {
+        if(state){
+            const {message} = state
+            setMessage(message)
+            setTimeout(() => {
+                setMessage('')
+                window.history.replaceState({}, document.title)
+            }, 2000)
+        }
+    },[state])
     return(
         <div className="home pt-3">
+            {
+                message? 
+                <div className="alert alert-success order-success" role="alert">
+                    {message}
+                </div>:
+                ''
+            }
             <div className="container">
                 <div className="row">
                     <div className="col-md-3">

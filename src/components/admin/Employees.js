@@ -31,18 +31,28 @@ const Employees = () => {
                         <th scope="col">Điện thoại</th>
                         <th scope="col">Giới tính</th>
                         <th scope="col">Chức vụ</th>
+                        <th scope="col">Is block</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             list.map((item, idx) => (
-                                <tr>
+                                <tr key={idx}>
                                 <th scope="row">{idx + 1}</th>
                                 <td>{item.fullname}</td>
                                 <td>{item.email}</td>
                                 <td>{item.phone_number}</td>
                                 <td>{item.gender}</td>
                                 <td>{item.role}</td>
+                                <td >{ }
+                                    {
+                                        item.role !== 'admin'?
+                                            (item.is_block? 
+                                            <button className="btn btn-danger" eid = {item.employee_id}>Yes</button> :
+                                            <button className="btn btn-primary" eid = {item.employee_id}>No</button>) :
+                                            ''
+                                    }
+                                 </td>
                                 </tr>
                             ))
                         }

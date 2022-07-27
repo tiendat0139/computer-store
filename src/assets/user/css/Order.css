@@ -1,0 +1,43 @@
+.order{
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+}
+.address{
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+.shipment{
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+.ship-op{
+    height: 16px;
+    width: 16px;
+    margin-right: 20px;
+}
+.product-inf{
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.order-qtt,.order-name,.order-price{
+    font-size: 12px;
+}
+.total-price_nb{
+    color: #ff454b;
+    font-weight: 700;
+}
+.total-price{
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.order-btn{
+    background-color: #ff454b;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 4px;
+    margin-top: 20px;
+}

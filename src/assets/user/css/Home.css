@@ -1,6 +1,16 @@
 .home{
     background-color: #ededed;
     padding-bottom: 40px;
+    position: relative;
+}
+.order-success{
+    position: absolute !important;
+    display: inline;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-weight: 600;
 }
 .product{
     margin-top: 30px;
