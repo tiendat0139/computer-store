@@ -32,7 +32,7 @@ const Sidebar = () => {
                     </Link>
                     <div className="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                         <nav className="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <Link to={"#"} className="nav-link" href="layout-static.html">List employes</Link>   
+                            <Link to={"/admin/employees"} className="nav-link" href="layout-static.html">List employes</Link>   
                         </nav>
                     </div>
                 </div>

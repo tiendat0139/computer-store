@@ -1,0 +1,19 @@
+.page-list{
+    display: flex;
+    justify-content: space-between;
+}
+.page-item{
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 600;
+    margin-left: 8px;
+    cursor: pointer;
+}
+.page-item.active{
+    background-color: #243a76;
+    color: #fff;
+}

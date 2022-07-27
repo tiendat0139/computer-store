@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {Link} from 'react-router-dom'
 import '../../assets/user/css/Navbar.css'
 
 const Navbar = () => {
+    const [logged, setLogged] = useState();
+
+    useEffect(() => {
+        if(localStorage.getItem('username')){
+            setLogged(true)
+        }
+    },[])
     return(
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,8 +32,10 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={"#"} className="nav-link" href="#" tabIndex="-1" aria-disabled="true">
-                                    <i className="fa-solid fa-user nav-icon"></i>
+                                <Link to={"/login"} className="nav-link" href="#" tabIndex="-1" aria-disabled="true">
+                                    {
+                                        logged? <i className="fa-solid fa-user nav-icon"></i> : "Login"
+                                    }
                                 </Link>
                             </li>
                         </ul>

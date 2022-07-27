@@ -18,7 +18,6 @@ const Navbar = () => {
                         <li><Link to={"#"} className="dropdown-item" href="#!">Settings</Link></li>
                         <li><Link to={"#"} className="dropdown-item" href="#!">Activity Log</Link></li>
                         <li><Link to={"#"} className="dropdown-item" href="#!">Logout</Link></li>
-
                     </ul>
                 </li>
             </ul>

@@ -1,12 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-
+import axios from 'axios'
 import '../assets/user/css/Sidebar.css';
 
 const Sidebar = () => {
-    // data get from database
     const [current, setCurrent] = useState([]);
-    const data = ["Laptop Gaming", "Laptop Dell", "Laptop HP", "Macbook", "Laptop MSI"];
+    const [data, setData] = useState([])
+    useEffect(() => {
+        axios.get('/categories').then(res => {
+            if(res.data.status === true){
+                setData(res.data.categories);
+            }
+        })
+    },[])
 
     const handleCurrent = (e) => {
         const next = [...current];
@@ -24,9 +30,9 @@ const Sidebar = () => {
                 {
                     data.map((item, idx) => (
                         <li className="sidebar-item" key= {idx} id={idx} >
-                            <Link to={`/${item}`} className={`sidebar-item_link ${current[idx]? 'current': ''}`} onClick = {e => handleCurrent(e)}>
+                            <Link to={`/category/${item.category_id}`} className={`sidebar-item_link ${current[idx]? 'current': ''}`} onClick = {e => handleCurrent(e)}>
                                 <ion-icon name="caret-forward-outline"></ion-icon>
-                                {item}
+                                {item.name}
                             </Link>
                         </li>
 

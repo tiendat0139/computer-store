@@ -1,50 +1,11 @@
 import React from "react";
+import {Routes, Route} from 'react-router-dom';
 import HomeSidebar from './HomeSidebar'
-import { Link } from "react-router-dom";
 import '../assets/user/css/Home.css'
+import HomeProduct from "./HomeProduct";
+import CategoryProduct from "./CategoryProduct";
+
 const Home = () => {
-    const prod_selling = [
-        {
-            id: 1,
-            name: 'Laptop Asus Gaming ROG Strix G513IH-HN015W (R7 4800H/8GB RAM/512GB SSD/15.6 FHD 144hz/GTX1650 4GB/Win11/Xám',
-            qtt: '2',
-            old_price: '39.000.000',
-            new_price: '35.999.999',
-            img: 'https://hanoicomputercdn.com/media/product/63683_asus_gaming_rog_strix_g513_20.jpeg'
-        },
-        {   
-            id: 2,
-            name: 'Laptop Acer Gaming Nitro 5 AN515-57-71VV (NH.QENSV.005) (i7 11800H/8GB Ram/512GB SSD/RTX3050 4G/15.6 inch FHD 144Hz/Win 11/Đen',
-            qtt: '1',
-            old_price: '20.500.000',
-            new_price: '18.999.999',
-            img: 'https://hanoicomputercdn.com/media/product/120_65480_acer_gaming_nitro_5_an515_57_16.png'
-        },
-        {
-            id: 3,
-            name: 'Laptop Acer Gaming Nitro 5 AN515-57-71VV (NH.QENSV.005) (i7 11800H/8GB Ram/512GB SSD/RTX3050 4G/15.6 inch FHD 144Hz/Win 11/Đen',
-            qtt: '1',
-            old_price: '25.500.000',
-            new_price: '22.900.000',
-            img: 'https://hanoicomputercdn.com/media/product/120_61623_laptop_acer_gaming_nitro_5_an515_57_16.png'
-        },
-        {
-            id: 4,
-            name: 'Laptop Acer Gaming Predator Helios 500 PH517-52-797L (NH.QD3SV.001) (i711800H/64GB Ram/2TB SSD/RTX3080 8G/17.3 inch FHD 360Hz/Win 10/Đen',
-            qtt: '1',
-            old_price: '24.500.000',
-            new_price: '22.900.000',
-            img: 'https://hanoicomputercdn.com/media/product/120_62709_laptop_acer_gaming_predator_helios_500_12.jpg'
-        },
-        {
-            id: 4,
-            name: 'Laptop Acer Gaming Predator Helios 500 PH517-52-797L (NH.QD3SV.001) (i711800H/64GB Ram/2TB SSD/RTX3080 8G/17.3 inch FHD 360Hz/Win 10/Đen',
-            qtt: '1',
-            old_price: '24.500.000',
-            new_price: '22.900.000',
-            img: 'https://hanoicomputercdn.com/media/product/120_62709_laptop_acer_gaming_predator_helios_500_12.jpg'
-        },
-    ]
     return(
         <div className="home pt-3">
             <div className="container">
@@ -77,52 +38,10 @@ const Home = () => {
                     </div>
                     
                 </div>
-
-                <div className="product">
-                    <div className="product-bestseller">
-                        <div className="row row-cols-5">
-                            <h4 className="text-center col-md-12 mb-4" style={{color: '#fedf5a'}}>SẢN PHẨM BÁN CHẠY</h4>
-                            {
-                                prod_selling.map((item, idx) => (
-                                    <Link to = {`/${item.id}`}className="col mb-3"key={idx} prod_id={item.id}>
-                                        <div className="product-item">
-                                            <span className="product-tag">Yêu thích</span>
-                                            <img src={item.img} alt="" className="product-img"></img>
-                                            <div className="product-name">{item.name}</div>
-                                            <div className="product-qtt">Còn {item.qtt} sản phẩm</div>
-                                            <div className="row">
-                                                <div className="product-old-price col-md-5">{item.old_price} đ</div>
-                                                <div className="product-new-price col-md-7">{item.new_price} đ</div>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                ))
-                            }
-                        </div>
-                    </div>
-                    <div className="product-bestseller mt-5">
-                        <div className="row row-cols-5">
-                            <h4 className="text-center col-md-12 mb-4" style={{color: '#fedf5a'}}>GIẢM GIÁ NHIỀU</h4>
-                            {
-                                prod_selling.map((item, idx) => (
-                                    <Link to={`/${item.prod_id}`} className="col mb-3"key={idx} prod_id={item.id}>
-                                        <div className="product-item">
-                                            <span className="product-tag">Yêu thích</span>
-                                            <img src={item.img} alt="" className="product-img"></img>
-                                            <div className="product-name">{item.name}</div>
-                                            <div className="product-qtt">Còn {item.qtt} sản phẩm</div>
-                                            <div className="row">
-                                                <div className="product-old-price col-md-5">{item.old_price} đ</div>
-                                                <div className="product-new-price col-md-7">{item.new_price} đ</div>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                ))
-                            }
-                        </div>
-                    </div>
-                </div>
-
+                <Routes>
+                    <Route path="/" element={<HomeProduct/>} />
+                    <Route path="/category/:categoryId" element={<CategoryProduct />} />
+                </Routes>
 
             </div>
         </div>
