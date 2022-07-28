@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Dashboard from "../../components/admin/Dashboard";
 import AddProduct from "../../components/admin/AddProduct";
 import Employees from "../../components/admin/Employees";
+import Order from "../../components/admin/Order";
 
 const AdminLayout = () => {
     return (
@@ -21,6 +22,7 @@ const AdminLayout = () => {
                             <Route path="/" element={<Dashboard/>}/>
                             <Route path="add-product" element={<AddProduct/>}/>
                             <Route path="/employees" element={<Employees />} />
+                            <Route path="/orders" element={<Order />} />
                         </Routes>
                     </main>
                     <Footer />

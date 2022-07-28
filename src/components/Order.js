@@ -27,34 +27,36 @@ const Order = () => {
                 <div className="col-md-9">
                     <h4 className=" fw-bold">1. Địa chỉ giao hàng</h4>
                     <div className="address">
-                        <div className="input-group mb-3">
-                            <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Họ tên</span>
-                            <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Họ và tên" />
-                        </div>
-                        <div className="input-group mb-3">
-                            <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Số điện thoại </span>
-                            <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Nhập số điện thoại "/>
-                        </div>
-                        <div className="input-group mb-3">
-                            <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Email</span>
-                            <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Nhập email" />
-                        </div>
-                        <div className="input-group mb-3">
-                            <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Tỉnh/Thành phố</span>
-                            <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Tỉnh/Thành phố"/>
-                        </div>
-                        <div className="input-group mb-3">
-                            <span className="input-group-text w-25 text-center d-block fw-bold " id="basic-addon3">Quận/Huyện</span>
-                            <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Quận/Huyện" />
-                        </div>
-                        <div className="input-group mb-3">
-                            <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Phường/Xã</span>
-                            <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Phường/Xã"/>
-                        </div>
-                        <div className="input-group mb-3">
-                            <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Địa chỉ</span>
-                            <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Số nhà, tên đường"/>
-                        </div>
+                        <form>                    
+                            <div className="input-group mb-3">
+                                <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Họ tên</span>
+                                <input type="text" className="form-control shadow-none" required id="basic-url" aria-describedby="basic-addon3" placeholder="Họ và tên" />
+                            </div>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Số điện thoại </span>
+                                <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Nhập số điện thoại "/>
+                            </div>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Email</span>
+                                <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Nhập email" />
+                            </div>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Tỉnh/Thành phố</span>
+                                <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Tỉnh/Thành phố"/>
+                            </div>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text w-25 text-center d-block fw-bold " id="basic-addon3">Quận/Huyện</span>
+                                <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Quận/Huyện" />
+                            </div>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Phường/Xã</span>
+                                <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Phường/Xã"/>
+                            </div>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text w-25 text-center d-block fw-bold" id="basic-addon3">Địa chỉ</span>
+                                <input type="text" className="form-control shadow-none" id="basic-url" aria-describedby="basic-addon3" placeholder="Số nhà, tên đường"/>
+                            </div>
+                        </form>
                     </div>
                     <h4 className="fw-bold">2. Chọn hình thức giao hàng</h4>
                     <div className="shipment">
@@ -83,7 +85,7 @@ const Order = () => {
                             </span>
                         </div>
                     </div>
-                    <button className="order-btn" onClick={() => navigate('/', {state: {message: "Cảm ơn bạn đã đặt hàng!!! Chúng tôi sẽ xử lý đơn hàng sớm nhất có thể"}} )}>ĐẶT HÀNG</button>
+                    <button type="submit" className="order-btn" >ĐẶT HÀNG</button>
                 </div>
             </div>
         </div>
